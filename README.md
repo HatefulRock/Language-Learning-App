@@ -5,7 +5,7 @@
 
 An intelligent desktop application designed to assist language learners by leveraging real-time eye tracking to provide contextual help and streamline vocabulary acquisition while reading texts in a foreign language.
 
-**[ Placeholder: Add a compelling screenshot or GIF of the app in action here ]**
+**[ Placeholder:]**
 
 ## ✨ Overview
 
@@ -93,12 +93,11 @@ Learning a new language often involves extensive reading, which can be challengi
     ```bash
     pip install -r requirements.txt
     ```
-    *(Note: You will need to create a `requirements.txt` file listing all necessary packages based on the imports in your code.)*
 
 4.  **API Keys & Configuration:**
     *   External services (Translation APIs, LLM APIs, Cloud Voice/OCR) require API keys.
     *   Copy the example configuration file (if provided) or create `config/settings.json`.
-    *   **DO NOT commit your API keys directly into the code or `settings.json` if the repository is public.** Use environment variables or a secure secrets management method. See `config/settings_manager.py` for how settings are loaded.
+    *   Use environment variables or a secure secrets management method. See `config/settings_manager.py` for how settings are loaded.
     *   Configure necessary paths (e.g., Tesseract path if not in PATH) and default languages in `config/settings.json`.
 
 ## ▶️ Usage
@@ -128,18 +127,17 @@ Learning a new language often involves extensive reading, which can be challengi
 
 The project follows a phased development approach:
 
-1.  ✅ **Phase 0:** Setup & Basic Text Rendering/Coordinate Mapping.
-2.  ✅ **Phase 1:** Core Interaction Loop with Mocked (Mouse) Input.
-3.  ✅ **Phase 2:** Real Eye Tracking Integration & Calibration (*Iterative*).
-4.  ✅ **Phase 3:** Language-Specific Handling (e.g., Chinese).
-5.  ✅ **Phase 4:** Content Loading (PDF, AI Gen).
-6.  ✅ **Phase 5:** Flashcards & SRS Implementation.
-7.  ✅ **Phase 6:** Voice Features (TTS/STT).
+1.  ⏳ **Phase 0:** Setup & Basic Text Rendering/Coordinate Mapping.
+2.  ⏳ **Phase 1:** Core Interaction Loop with Mocked (Mouse) Input.
+3.  ⏳ **Phase 2:** Real Eye Tracking Integration & Calibration (*Iterative*).
+4.  ⏳ **Phase 3:** Language-Specific Handling (e.g., Chinese).
+5.  ⏳ **Phase 4:** Content Loading (PDF, AI Gen).
+6.  ⏳ **Phase 5:** Flashcards & SRS Implementation.
+7.  ⏳ **Phase 6:** Voice Features (TTS/STT).
 8.  ⏳ **Phase 7:** Multi-Language Generalization.
 9.  ⏳ **Phase 8:** Stats & Quizzes Implementation.
 10. ⏳ **Phase 9:** Polish, Testing, Documentation, Packaging.
 
-*(Update checkmarks as phases are completed)*
 
 ## 🙌 Contributing
 
@@ -162,10 +160,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 🙏 Acknowledgements (Optional)
 
-*   Mention key libraries like MediaPipe, PyQt, PyMuPDF.
-*   Inspiration from other language learning tools.
-*   Any specific contributors.
+*   
 
 ---
 
-*Remember to replace placeholders, update the status, add screenshots, and create the `requirements.txt` and `LICENSE.md` files.*
