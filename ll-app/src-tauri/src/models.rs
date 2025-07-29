@@ -4,12 +4,19 @@ use sea_orm::entity::prelude::*;
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
 #[sea_orm(table_name = "words")]
 pub struct Model {
-    #[sea_orm(primary_key)]
+    #[sea_orm(primary_key)] // This field is the primary key
     pub id: i32,
-    pub text: String,
-    pub familiarity_score: i32,
-    #[sea_orm(column_type = "Text", nullable = true)]
-    pub source_sentence: Option<String>,
+
+    pub original_word: String,
+
+    #[sea_orm(column_type = "Text")]
+    pub translation: Option<String>,
+    
+    #[sea_orm(default_value = 1)]
+    pub lookup_count: i32,
+    
+    // SeaORM can automatically manage timestamps
+    pub created_at: ChronoDateTime,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
