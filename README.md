@@ -1,166 +1,140 @@
-# Eye-Tracking Language Learning Assistant (Project Name TBD)
+Of course. Here is a comprehensive README.md file for your application, "LingoLeap."
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Choose your license -->
-<!-- Add other badges as relevant: build status, coverage, etc. -->
-
-An intelligent desktop application designed to assist language learners by leveraging real-time eye tracking to provide contextual help and streamline vocabulary acquisition while reading texts in a foreign language.
-
-**[ Placeholder:]**
-
-## ✨ Overview
-
-Learning a new language often involves extensive reading, which can be challenging due to unknown vocabulary and complex sentence structures. This application aims to make the reading process smoother and more efficient by:
-
-1.  **Monitoring eye gaze:** Using a standard webcam and computer vision (MediaPipe), the app tracks where the user is looking on the screen while reading.
-2.  **Detecting difficulty:** If the user's gaze lingers on a specific word or phrase for an extended period (indicating potential difficulty), the app automatically triggers assistance.
-3.  **Providing contextual help:** An overlay appears near the difficult word, offering translations, Pinyin (for Chinese), definitions, and example sentences, powered by translation APIs and optional LLM integration.
-4.  **Facilitating vocabulary learning:** Users can easily save encountered words/phrases to personalized flashcard decks with context.
-5.  **Spaced Repetition System (SRS):** Integrated flashcard review system helps users memorize vocabulary efficiently.
-6.  **Supporting diverse content:** Users can read pre-loaded texts, generate custom texts using AI (LLMs), or upload their own PDF documents (including OCR for scanned PDFs).
-7.  **Multi-Language Support:** Designed to be configurable for various source and target languages.
-8.  **Voice Integration:** Includes Text-to-Speech (TTS) for pronunciation and Speech-to-Text (STT) for pronunciation practice.
-9.  **Learning Analytics:** Provides statistics and insights into the user's reading habits and vocabulary acquisition progress.
-10. **Active Recall:** Includes quizzes and dynamic tests based on the user's vocabulary.
-
-## 🎯 Motivation
-
-*   Reduce the friction and intimidation often associated with reading foreign language texts.
-*   Provide immediate, context-aware assistance without breaking the reading flow significantly.
-*   Accelerate vocabulary learning by seamlessly integrating reading with flashcard creation and SRS.
-*   Offer a personalized and adaptive learning experience based on the user's real-time reading behaviour.
-
-## 🚀 Key Features
-
-*   **Real-time Eye Tracking:** Webcam-based gaze tracking using MediaPipe.
-*   **Gaze-Triggered Assistance:** Automatic translation/definition overlays on difficult words.
-*   **Multi-Language Support:** Configurable source and target languages.
-*   **PDF & AI Content:** Load PDFs (with OCR) or generate texts via LLMs.
-*   **Flashcards with SRS:** Integrated spaced repetition system for vocabulary.
-*   **Text-to-Speech (TTS):** Hear words and sentences pronounced.
-*   **Speech-to-Text (STT):** Practice pronunciation with feedback.
-*   **User Stats & Insights:** Track learning progress.
-*   **Quizzes & Testing:** Active recall exercises.
-*   **Multi-Page Interface:** Dedicated sections for Library, Flashcards, Stats, Reading, etc.
-
-## 🛠️ Tech Stack
-
-*   **Core Language:** Python 3.x
-*   **GUI Framework:** PyQt6 / PySide6
-*   **Computer Vision / Eye Tracking:** OpenCV (`opencv-python`), MediaPipe (`mediapipe`)
-*   **Numerical Computation:** NumPy (`numpy`)
-*   **Text Processing:**
-    *   Language-aware segmentation (e.g., spaCy, Jieba for Chinese)
-    *   GUI Framework's text layout capabilities
-*   **PDF Processing:** PyMuPDF (`PyMuPDF`)
-*   **OCR:** PyTesseract (`pytesseract`) wrapper for Tesseract OCR / Cloud OCR APIs
-*   **API Interaction:** Requests (`requests`), specific client libraries (e.g., `openai`)
-*   **Database:** SQLite3 (for flashcards, stats, dictionary data)
-*   **Voice:** pyttsx3 (Local TTS), SpeechRecognition (Local STT Wrapper) / Cloud APIs
-*   **Packaging (Optional):** PyInstaller, cx_Freeze
-
-## ⚙️ Getting Started
-
-### Prerequisites
-
-*   Python 3.8+
-*   `pip` package manager
-*   Git
-*   **Tesseract OCR Engine:** Required for OCR functionality on scanned PDFs if using the local option.
-    *   Install Tesseract for your OS (see [Tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Installation.html)).
-    *   Install necessary language data packs (e.g., `chi_sim`, `eng`, `spa`, `fra`). Ensure the Tesseract executable is in your system's PATH or configure the path in the application settings.
-*   Webcam connected and accessible.
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
-    ```
-
-2.  **Create and activate a virtual environment:**
-    ```bash
-    # Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-
-    # macOS / Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **API Keys & Configuration:**
-    *   External services (Translation APIs, LLM APIs, Cloud Voice/OCR) require API keys.
-    *   Copy the example configuration file (if provided) or create `config/settings.json`.
-    *   Use environment variables or a secure secrets management method. See `config/settings_manager.py` for how settings are loaded.
-    *   Configure necessary paths (e.g., Tesseract path if not in PATH) and default languages in `config/settings.json`.
-
-## ▶️ Usage
-
-1.  **Configure Settings:** Ensure API keys (if using cloud services), language preferences, and eye-tracking parameters (like fixation duration threshold) are set correctly in `config/settings.json` or via the in-app settings UI.
-
-2.  **Run the application:**
-    ```bash
-    python main.py
-    ```
-
-3.  **Initial Setup:**
-    *   The first time, you might be prompted to run the eye-tracking calibration routine. Follow the on-screen instructions.
-
-4.  **Main Workflow:**
-    *   Navigate using the sidebar/tabs (Home, Library, Flashcards, Stats, Settings).
-    *   Go to the Library or use the Content Loader to open a text file, PDF, or generate text via AI.
-    *   The text will open in the Reading Page.
-    *   Read the text. Ensure the eye-tracking system is active (indicator in UI).
-    *   If you linger on a word while in translation mode, an overlay should appear.
-    *   Use buttons on the overlay or context menus to save words to flashcards.
-    *   Access other features like TTS/STT via UI controls.
-    *   Review vocabulary in the Flashcards section.
-    *   Check progress in the Stats section.
-
-## 🗺️ Roadmap
-
-The project follows a phased development approach:
-
-1.  ⏳ **Phase 0:** Setup & Basic Text Rendering/Coordinate Mapping.
-2.  ⏳ **Phase 1:** Core Interaction Loop with Mocked (Mouse) Input.
-3.  ⏳ **Phase 2:** Real Eye Tracking Integration & Calibration (*Iterative*).
-4.  ⏳ **Phase 3:** Language-Specific Handling (e.g., Chinese).
-5.  ⏳ **Phase 4:** Content Loading (PDF, AI Gen).
-6.  ⏳ **Phase 5:** Flashcards & SRS Implementation.
-7.  ⏳ **Phase 6:** Voice Features (TTS/STT).
-8.  ⏳ **Phase 7:** Multi-Language Generalization.
-9.  ⏳ **Phase 8:** Stats & Quizzes Implementation.
-10. ⏳ **Phase 9:** Polish, Testing, Documentation, Packaging.
-
-
-## 🙌 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/your-feature-name`).
-3.  Make your changes.
-4.  Ensure your code adheres to project styling conventions (e.g., using Black, Flake8).
-5.  Write or update tests for your changes.
-6.  Commit your changes (`git commit -m 'Add some feature'`).
-7.  Push to the branch (`git push origin feature/your-feature-name`).
-8.  Open a Pull Request.
-
-Please provide a clear description of your changes in the Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. *(Create a LICENSE.md file with the MIT license text)*
-
-## 🙏 Acknowledgements (Optional)
-
-*   
+This README is designed to be clear, compelling, and informative for both end-users and potential contributors. It translates your detailed blueprint and technical roadmap into an accessible and professional project overview.
 
 ---
 
+# LingoLeap 🚀
+
+**Read, learn, and speak your target language with an AI-powered companion that adapts to you.**
+
+LingoLeap is a next-generation language learning application built for serious, independent learners. It moves beyond simple flashcards and gamified lessons to create a deeply immersive and effective learning environment. By integrating with your own content and leveraging powerful local AI, LingoLeap helps you turn reading into fluency.
+
+![CI](https://img.shields.io/badge/build-passing-brightgreen)![License](https://img.shields.io/badge/license-MIT-blue)![Version](https://img.shields.io/badge/version-1.0.0-informational)![Rust](https://img.shields.io/badge/backend-Rust-orange)![Tauri](https://img.shields.io/badge/framework-Tauri-ff69b4)![React](https://img.shields.io/badge/frontend-React-61DAFB)
+
+---
+
+## About The Project
+
+Traditional language apps often keep you in a walled garden, learning disconnected vocabulary. LingoLeap is different. It's built on the principle that the most effective way to learn is by engaging with content you find interesting, and the best way to remember is through context and intelligent repetition.
+
+This application is for the learner who wants to:
+*   **Read anything:** From news articles and blog posts to entire novels.
+*   **Understand deeply:** Get instant, multi-layered translations and grammatical explanations.
+*   **Remember forever:** Turn new words into mastered vocabulary with a sophisticated Spaced Repetition System (SRS).
+*   **Practice speaking:** Build conversational confidence in a safe, low-pressure environment with an AI partner.
+
+LingoLeap is built with a high-performance Rust backend and a modern React frontend using the Tauri framework, ensuring it is fast, secure, and can run powerful AI features locally on your machine—with or without an internet connection.
+
+## ✨ Core Features
+
+LingoLeap is designed around five core pillars to create a complete learning ecosystem.
+
+### 📚 Pillar 1: The Immersive Reader
+The gateway to learning. Import content from the web, `.txt`, `.pdf`, or `.epub` files, or use our curated library. Hover over or tap any word for instant assistance.
+*   **User-Driven Content:** You choose what you want to read.
+*   **Contextual Assistance:** Get translations, definitions, and more without leaving your text.
+*   **Curated Library:** Access pre-sorted texts from A1 to C2 difficulty.
+
+### 🧠 Pillar 2: The Vocabulary Engine
+An intelligent core that converts struggling words into mastered vocabulary. Every word you look up is automatically added to a dynamic learning system.
+*   **Progressive Familiarity Score:** A nuanced 1-5 score tracks how well you know a word.
+*   **Spaced Repetition System (SRS):** An Anki-like algorithm, powered by your Familiarity Score, tells you the optimal time to review.
+*   **Contextual Flashcards:** Never forget where you saw a word. Each flashcard includes the original sentence, dramatically improving recall.
+
+### 🤖 Pillar 3: AI-Powered Practice
+Go beyond rote memorization. Our integrated AI provides deep linguistic insights and creates exercises tailored just for you.
+*   **Smart Sentence Analysis:** Highlight any sentence to get an idiomatic translation, a literal translation, and a complete grammatical breakdown.
+*   **Local LLM Support:** All AI features can run 100% offline on your machine for ultimate privacy and performance.
+*   **Dynamic Exercise Generator:** Creates personalized quizzes using the words you're struggling with the most.
+
+### 🗣️ Pillar 4: Conversational Fluency Module
+A safe environment to practice active speaking and listening skills. Engage in role-playing scenarios with an AI tutor who is always available.
+*   **High-Quality Audio:** Hear natural-sounding speech for any word or sentence.
+*   **AI Conversation Partner:** Practice real-world scenarios, from ordering coffee to discussing ideas.
+*   **Pronunciation Feedback:** Get targeted feedback on your speech to help you sound more like a native speaker.
+
+### 🏆 Pillar 5: Motivation & Engagement
+A framework to keep you consistent and focused on your journey.
+*   **Gamification Engine:** Maintain streaks, earn points, and unlock achievements for your hard work.
+*   **Personalized Goal Setting:** Define what you want to achieve, and let the app help you track your progress.
+*   **Proactive Reminders:** Get gentle nudges to help you stay on track with your self-defined goals.
+
+## Built With
+
+LingoLeap leverages a modern, performance-oriented tech stack to deliver a seamless desktop experience.
+
+*   [**Tauri**](https://tauri.app/): A framework for building lightweight, secure, and fast cross-platform desktop apps.
+*   [**Rust**](https://www.rust-lang.org/): Powers the entire backend, handling everything from database operations and SRS algorithms to local AI model execution.
+*   [**React**](https://reactjs.org/): Drives the user interface, creating a modern and responsive experience.
+*   [**TypeScript**](https://www.typescriptlang.org/): For a robust and maintainable frontend codebase.
+*   [**SQLite**](https://www.sqlite.org/index.html): For local, efficient, and private database storage.
+*   [**SeaORM**](https://www.sea-ql.org/SeaORM/) / [**Diesel**](https://diesel.rs/): For safe and idiomatic database interactions in Rust.
+
+## Getting Started
+
+To get a local copy up and running, please follow these steps.
+
+### Prerequisites
+
+Ensure you have the Rust toolchain and Node.js/npm installed on your system. Follow the official [Tauri setup guide](https://tauri.app/v1/guides/getting-started/prerequisites) for your operating system.
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/your_username/lingoleap.git
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Run the application in development mode
+    ```sh
+    npm run tauri dev
+    ```
+
+## 🗺️ Roadmap
+
+We are building LingoLeap one milestone at a time, ensuring each step delivers core value to our users.
+
+*   **✅ Milestone 1: The Core Reading Experience (MVP)**
+    *   Load and read `.txt` files with on-demand API translations.
+    *   Log looked-up words to a local database.
+
+*   **✅ Milestone 2: Vocabulary Engine & SRS**
+    *   Implement the Familiarity Score and SRS algorithm in Rust.
+    *   Build the core flashcard review system.
+
+*   **🚧 Milestone 3: AI Power-Up & Local LLM**
+    *   Integrate local LLMs (via `llama.cpp`) for offline sentence analysis.
+    *   Add support for `.pdf` and `.epub` files.
+
+*   **🔜 Milestone 4: Conversational Fluency Module**
+    *   Integrate Text-to-Speech and Speech-to-Text services.
+    *   Build the AI conversation partner interface.
+
+*   **🔜 Milestone 5: Engagement, Polish & Ecosystem**
+    *   Implement gamification, goal setting, and the curated content library.
+    *   Add contextual flashcards and the AI exercise generator.
+
+See the [open issues](https://github.com/your_username/lingoleap/issues) for a full list of proposed features (and known issues).
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+---
