@@ -1,14 +1,9 @@
-Of course. Here is a comprehensive README.md file for your application, "LingoLeap."
 
-This README is designed to be clear, compelling, and informative for both end-users and potential contributors. It translates your detailed blueprint and technical roadmap into an accessible and professional project overview.
-
----
-
-# LingoLeap 🚀
+# Language Learning app
 
 **Read, learn, and speak your target language with an AI-powered companion that adapts to you.**
 
-LingoLeap is a next-generation language learning application built for serious, independent learners. It moves beyond simple flashcards and gamified lessons to create a deeply immersive and effective learning environment. By integrating with your own content and leveraging powerful local AI, LingoLeap helps you turn reading into fluency.
+LL app is a next-generation language learning application built for serious, independent learners. It moves beyond simple flashcards and gamified lessons to create a deeply immersive and effective learning environment. By integrating with your own content and leveraging powerful local AI, LL helps you turn reading into fluency.
 
 ![CI](https://img.shields.io/badge/build-passing-brightgreen)![License](https://img.shields.io/badge/license-MIT-blue)![Version](https://img.shields.io/badge/version-1.0.0-informational)![Rust](https://img.shields.io/badge/backend-Rust-orange)![Tauri](https://img.shields.io/badge/framework-Tauri-ff69b4)![React](https://img.shields.io/badge/frontend-React-61DAFB)
 
@@ -16,7 +11,7 @@ LingoLeap is a next-generation language learning application built for serious, 
 
 ## About The Project
 
-Traditional language apps often keep you in a walled garden, learning disconnected vocabulary. LingoLeap is different. It's built on the principle that the most effective way to learn is by engaging with content you find interesting, and the best way to remember is through context and intelligent repetition.
+Traditional language apps often keep you in a walled garden, learning disconnected vocabulary. LL is different. It's built on the principle that the most effective way to learn is by engaging with content you find interesting, and the best way to remember is through context and intelligent repetition.
 
 This application is for the learner who wants to:
 *   **Read anything:** From news articles and blog posts to entire novels.
@@ -24,11 +19,11 @@ This application is for the learner who wants to:
 *   **Remember forever:** Turn new words into mastered vocabulary with a sophisticated Spaced Repetition System (SRS).
 *   **Practice speaking:** Build conversational confidence in a safe, low-pressure environment with an AI partner.
 
-LingoLeap is built with a high-performance Rust backend and a modern React frontend using the Tauri framework, ensuring it is fast, secure, and can run powerful AI features locally on your machine—with or without an internet connection.
+LL is built with a high-performance Rust backend and a modern React frontend using the Tauri framework, ensuring it is fast, secure, and can run powerful AI features locally on your machine—with or without an internet connection.
 
 ## ✨ Core Features
 
-LingoLeap is designed around five core pillars to create a complete learning ecosystem.
+LL is designed around five core pillars to create a complete learning ecosystem.
 
 ### 📚 Pillar 1: The Immersive Reader
 The gateway to learning. Import content from the web, `.txt`, `.pdf`, or `.epub` files, or use our curated library. Hover over or tap any word for instant assistance.
@@ -62,7 +57,7 @@ A framework to keep you consistent and focused on your journey.
 
 ## Built With
 
-LingoLeap leverages a modern, performance-oriented tech stack to deliver a seamless desktop experience.
+LL leverages a modern, performance-oriented tech stack to deliver a seamless desktop experience.
 
 *   [**Tauri**](https://tauri.app/): A framework for building lightweight, secure, and fast cross-platform desktop apps.
 *   [**Rust**](https://www.rust-lang.org/): Powers the entire backend, handling everything from database operations and SRS algorithms to local AI model execution.
@@ -82,9 +77,6 @@ Ensure you have the Rust toolchain and Node.js/npm installed on your system. Fol
 ### Installation
 
 1.  Clone the repo
-    ```sh
-    git clone https://github.com/your_username/lingoleap.git
-    ```
 2.  Install NPM packages
     ```sh
     npm install
@@ -96,7 +88,7 @@ Ensure you have the Rust toolchain and Node.js/npm installed on your system. Fol
 
 ## 🗺️ Roadmap
 
-We are building LingoLeap one milestone at a time, ensuring each step delivers core value to our users.
+We are building LL one milestone at a time, ensuring each step delivers core value to our users.
 
 *   **✅ Milestone 1: The Core Reading Experience (MVP)**
     *   Load and read `.txt` files with on-demand API translations.
@@ -118,7 +110,7 @@ We are building LingoLeap one milestone at a time, ensuring each step delivers c
     *   Implement gamification, goal setting, and the curated content library.
     *   Add contextual flashcards and the AI exercise generator.
 
-See the [open issues](https://github.com/your_username/lingoleap/issues) for a full list of proposed features (and known issues).
+See the [open issues] for a full list of proposed features (and known issues).
 
 ## Contributing
 
